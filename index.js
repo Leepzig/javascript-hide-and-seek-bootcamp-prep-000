@@ -24,7 +24,11 @@ function deepestChild() {
   var lastChild = child
   while (child) {
     lastChild = child
-    child = child.children[0]
+    if (child.children[0]) {
+      child = child.children[0]
+    } else {
+      return child
+    }
   }
   return lastChild
 }
